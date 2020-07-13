@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using DatingApp.API.Data;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -24,13 +25,14 @@ namespace DatingApp.API.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var values =await _context.Values.ToListAsync();
+            var values = await _context.Values.ToListAsync();
             return Ok(values);
         }
+        [AllowAnonymous]
         [HttpGet("{id}")]
-        public async Task<IActionResult> Index(int id )
+        public async Task<IActionResult> Index(int id)
         {
-           var value =await _context.Values.FindAsync(id);
+            var value = await _context.Values.FindAsync(id);
             if (value != null)
                 return Ok(value);
             return NotFound();

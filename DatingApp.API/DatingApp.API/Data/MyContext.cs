@@ -14,6 +14,32 @@ namespace DatingApp.API.Data
         {
         }
 
-        public virtual DbSet<Values> Values { get; set; } 
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<User>().HasData(new User
+        //    {
+        //        UserName = "ayad",
+        //        City = "Giza",
+        //        Country = "Egypt",
+        //        DateOfBirth = new DateTime(1994, 4, 15),
+        //        Created = DateTime.Now,
+        //        Gender = "male",
+        //        Introduction = "Software Engineer",
+        //        KnownAs = "3e3o",
+        //        LastActive = DateTime.Now,
+        //        LookingFor = "Software Engineer Job",
+       
+
+
+        //    });
+        //    CreatePasswordHash
+        //    base.OnModelCreating(modelBuilder);
+        //}
+      
+
+        public virtual DbSet<Values> Values { get; set; }
+        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Photo> Photos { get; set; }
+
     }
 }

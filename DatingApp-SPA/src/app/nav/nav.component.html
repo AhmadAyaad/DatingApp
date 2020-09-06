@@ -20,7 +20,7 @@
       <div *ngIf="isLogedIn()" class="dropdown" appDropdown #r="appDropdown">
 
         <img class="mr-1"
-        src="{{photoUrl}}"
+        src="{{photoUrl || '../../../../assets/16.1 user.png.png' }}"
         />
         <a class="dropdown-toggle text-light">
           welcome {{ loginService.decodedToken?.unique_name | titlecase }}

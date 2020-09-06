@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { BehaviorSubject } from 'rxjs';
 import { NgxGalleryThumbnailsComponent } from 'ngx-gallery-9';
+import { IUser } from '../_models/IUser';
 
 @Injectable({
   providedIn: 'root',
@@ -42,8 +43,8 @@ export class LoginService {
     );
   }
 
-  register(userData) {
-    return this.http.post(registerUrl, userData);
+  register(user:IUser) {
+    return this.http.post(registerUrl, user);
   }
   isLoggedIn() {
     const token = localStorage.getItem('token');

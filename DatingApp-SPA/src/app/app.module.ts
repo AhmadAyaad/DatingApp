@@ -9,7 +9,10 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 // import { NgxGalleryModule } from 'ngx-gallery';
 import { NgxGalleryModule } from 'ngx-gallery-9';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FileUploadModule } from 'ng2-file-upload';
+import {ReactiveFormsModule} from '@angular/forms';
 // import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 import { AppComponent } from './app.component';
@@ -59,9 +62,12 @@ export function getToken() {
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     // BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
+    BsDatepickerModule.forRoot(),
+    BrowserAnimationsModule,
     RouterModule.forRoot(routes),
     FontAwesomeModule,
     NgxGalleryModule,

@@ -16,7 +16,7 @@
       <div class="card">
         <img
           class="card-img-top img-thumbnail"
-          src="{{ photoUrl }}"
+          src="{{ photoUrl || '../../../../../assets/16.1 user.png.png' }}"
           alt="{{ user.knownAs }}"
         />
         <div class="card-body">
@@ -30,7 +30,7 @@
           </div>
           <div>
             <strong>Member Since</strong>
-            <p>{{ user.created }}</p>
+            <p>{{ user.created |date }}</p>
           </div>
         </div>
 
